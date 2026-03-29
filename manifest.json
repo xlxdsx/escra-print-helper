@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "e-SCRA Print Helper",
+  "description": "Simplify printing cases from the eSCRA.",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["https://escra.mycentralapp.com/sfsreader/session/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://escra.mycentralapp.com/sfsreader/session/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
+
